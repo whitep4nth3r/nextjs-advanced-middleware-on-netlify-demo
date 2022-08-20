@@ -1,34 +1,63 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Advanced Middleware Demo — _only on Netlify_
 
-## Getting Started
+Next.js developers! Do you wish you could do **_MORE_** with middleware?
 
-First, run the development server:
+Do you want to be able to intercept and modify the response of a **statically generated** page based on geolocation data
+for example? Do you also want to be able to transform page **_data_** on the fly?
+
+Now you can! With Next.js Advanced Middleware. It’s powered by Netlify Edge Functions, brand new and only on Netlify.
+
+---
+
+## Documentation
+
+With <strong>@netlify/next</strong>, you get access to enhanced request and response features through an intuitive API.
+[Read more on the docs](https://ntl.fyi/3A0KcUD).
+
+---
+
+## Watch the video tutorial
+
+[![Next.js Advanced Middlware Video Tutorial](video_thumbnail.png)](https://youtu.be/_KZIs-8oulw)
+
+---
+
+## Play with the code
+
+### Prerequisites
+
+Make sure you've installed the [Netlify CLI](https://www.npmjs.com/package/netlify-cli) — which brings the power of
+Next.js Advanced Middleware to your development environment.
+
+Check you're on the latest version with the following command, and update if your package is not up to date!
 
 ```bash
-npm run dev
-# or
-yarn dev
+netlify --version
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Fork the repository to your GitHub account and clone it to your local machine.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Install dependencies:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```bash
+npm install
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Start the development server using the Netlify CLI:
 
-## Learn More
+```bash
+netlify dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+And a browser tab will automatically open at [http://localhost:8888](http://localhost:8888).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+You can start editing pages by modifying `pages/index.js` or `pages/static.js`. The pages auto-update as you edit the
+files.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+To experiment with the transformed response on `pages/static.js`, open up `middleware.ts`, and have fun!
 
-## Deploy on Vercel
+## Deploy on Netlify
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Instantly deploy this tutorial site to your own Netlify account:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[![Deploy to Netlify Button](https://www.netlify.com/img/deploy/button.svg)](https://ntl.fyi/3K7uewQ)
