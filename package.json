@@ -8,7 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@netlify/next": "^0.0.1",
+    "@netlify/next": "^1.3.0",
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0"
