@@ -61,6 +61,7 @@ export default async function handler(req, res) {
   }
 }
 
+// This enables the function to run in the background for up to 15 minutes
 export const config = {
   type: "experimental-background",
 };
