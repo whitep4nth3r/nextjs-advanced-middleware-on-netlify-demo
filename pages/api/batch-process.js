@@ -1,7 +1,13 @@
+// pages/api/batch-process.js
+// route runs on {url}/api/batch-process
+
+/* Utility function — used to mock long running processes
+ * in real-life situations such as creating PDFs and sending emails */
 function sleep(delay) {
   return new Promise((resolve) => setTimeout(resolve, delay));
 }
 
+/* Utility function to generate arbitrary invoice data */
 function generateInvoices(count) {
   // generate example invoice data for {count} invoices
   const data = [];
@@ -21,6 +27,7 @@ function generateInvoices(count) {
   return data;
 }
 
+/* Utility function to mock creating a PDF that takes a few seconds */
 async function createPdf(invoiceData) {
   // generate pdf using {invoiceData}
   // this probably takes a while per invoice!
@@ -32,6 +39,7 @@ async function createPdf(invoiceData) {
   return { pdfCreated: true, ...invoiceData };
 }
 
+/* Utility function to mock sending an email that takes a few seconds */
 async function sendEmail(pdf) {
   // use a fake mail service to mail a PDF
 
@@ -41,6 +49,7 @@ async function sendEmail(pdf) {
   console.log(`Email sent for invoice ${pdf.number} in ${t1 - t0}ms`);
 }
 
+/* Background Function — this code is run when the API route is hit */
 export default async function handler(req, res) {
   // use a URL query param to configure how many invoices to process
   // (.e.g ?count=100)
